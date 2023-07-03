@@ -1,25 +1,19 @@
-# FX 1-Minute Dataset (+ Crude Oil and Stock indexes e.g. SP500)
+# FX 1-Minute Dataset
 
 API and dataset download for [histdata.com](http://histdata.com).
 
 ## Download the dataset
 
-- Click Here to download it: [All instruments - 1Minute - 2000 / 2022 - Google Drive link (2.5GB)](https://drive.google.com/drive/folders/1IG_5SM3SLsxVeaDJlmL2qskex5EsTwjG?usp=sharing).
-
-- You can also re-download the whole dataset (up to date) by yourself:
+- You can download the dataset (up to date) by yourself:
 
 ```bash
 pip install -r requirements.txt
 python download_all_fx_data.py
 ```
 
-Expect it to take around 10 minutes if you have a fast internet connection.
-
+Expect it to take around 30 minutes if you have a fast internet connection.
 
 ## API
-
-[![Downloads](https://pepy.tech/badge/histdata)](https://pepy.tech/project/histdata)
-[![Downloads](https://pepy.tech/badge/histdata/month)](https://pepy.tech/project/histdata/month)
 
 ```
 pip install histdata
@@ -57,29 +51,13 @@ dl(year='2018', month='6', pair='eurusd', platform=P.NINJA_TRADER, time_frame=TF
 ## Data specification
 
 This repository contains:
-- A dataset of all the FX prices (1-minute data) from 2000, in Generic ASCII.
-   - More than 66 FX pairs
-- Contains some commodities:
-   - WTI/USD = WEST TEXAS INTERMEDIATE in USD
-   - BCO/USD = BRENT CRUDE OIL in USD
-- Contains some indexes:
-   - SPX/USD = S&P 500 in USD
-   - JPX/JPY = NIKKEI 225 in JPY
-   - NSX/USD = NASDAQ 100 in USD
-   - FRX/EUR = FRENCH CAC 40 in EUR
-   - UDX/USD = US DOLLAR INDEX in USD
-   - UKX/GBP = FTSE 100 in GBP
-   - GRX/EUR = DAX 30 in EUR
-   - AUX/AUD = ASX 200 in AUD
-   - HKX/HKD = HAN SENG in HKD
-E   - TX/EUR = EUROSTOXX 50 in EUR
+
+- A dataset of 10 FX pairs (1-minute data) from 2000, in Generic ASCII.
 - A set of functions to download the historical prices yourself.
 
 All the data is retrieved from: http://www.histdata.com/
 
-Any file in a dataset is zipped and contains: 
-- a CSV (semicolon separated file).
-- a status report (containing some meta data such as gaps).
+All files in a dataset are CSV (semicolon separated file).
 
 Any CSV file looks like this:
 
@@ -104,6 +82,7 @@ Format:
 `YYYYMMDD HHMMSS`
 
 Legend:
+
 - YYYY – Year
 - MM – Month (01 to 12)
 - DD – Day of the Month
@@ -111,7 +90,7 @@ Legend:
 - MM – Minute
 - SS – Second, in this case it will be always 00
 
-TimeZone: Eastern Standard Time (EST) time-zone *WITHOUT* Day Light Savings adjustments
+TimeZone: Eastern Standard Time (EST) time-zone _WITHOUT_ Day Light Savings adjustments
 
 ### OPEN Bid Quote
 
